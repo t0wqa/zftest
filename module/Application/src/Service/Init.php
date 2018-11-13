@@ -41,8 +41,8 @@ final class Init
     {
         $this->adapter = new Adapter([
             'driver'   => 'Pdo',
-            'username' => 'root',
-            'password' => 'ZdRVz6Dv',
+            'username' => 'foo',
+            'password' => 'bar',
             'dsn' => 'mysql:dbname=zf_test;host=localhost'
         ]);
 
