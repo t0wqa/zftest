@@ -71,7 +71,6 @@ final class Init
             (new Sql($this->adapter))->buildSqlString($table),
             Adapter::QUERY_MODE_EXECUTE
         );
-
     }
 
     /**
