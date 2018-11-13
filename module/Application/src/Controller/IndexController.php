@@ -8,6 +8,7 @@
 namespace Application\Controller;
 
 use Application\Service\Init;
+use Zend\Db\Adapter\Adapter;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
@@ -15,8 +16,14 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        $service = new Init();
-        echo '<pre>'; print_r($service->get());
+        $service = new Init(new Adapter([
+            'driver'   => 'Pdo',
+            'username' => 'foo',
+            'password' => 'bar',
+            'dsn' => 'mysql:dbname=zf_test;host=localhost'
+        ]));
+
+        print_r($service->get());
 
         die();
 

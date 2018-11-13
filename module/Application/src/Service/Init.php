@@ -36,15 +36,11 @@ final class Init
 
     /**
      * Init constructor.
+     * @param Adapter $adapter
      */
-    public function __construct()
+    public function __construct(Adapter $adapter)
     {
-        $this->adapter = new Adapter([
-            'driver'   => 'Pdo',
-            'username' => 'foo',
-            'password' => 'bar',
-            'dsn' => 'mysql:dbname=zf_test;host=localhost'
-        ]);
+        $this->adapter = $adapter;
 
         $this->create();
         $this->fill();
